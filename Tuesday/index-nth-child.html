@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p:nth-child(3n + 3) {
+        background-color: red;
+      }
+      p:not(.special) {
+        background-color: green;
+      }
+      p::selection {
+        background-color: aqua;
+      }
+
+      p::before {
+        content: "Ewan was here!";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum magni,
+        culpa accusamus, sit natus aliquam iste beatae recusandae temporibus
+        necessitatibus soluta qui, molestiae ipsa sunt placeat molestias illo
+        dolor nemo.
+      </p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p class="special">6</p>
+      <p>7</p>
+      <p>8</p>
+      <p>9</p>
+      <p>10</p>
+      <p>11</p>
+      <p>12</p>
+    </div>
+  </body>
+</html>

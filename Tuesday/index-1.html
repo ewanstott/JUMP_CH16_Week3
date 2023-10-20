@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <style>
+      .button {
+        background-color: greenyellow;
+        color: aliceblue;
+      }
+
+      .button.active {
+        color: blue;
+      }
+
+      .button:focus-within {
+        background-color: red;
+        color: aliceblue;
+      }
+
+      input:focus {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="button">1</button>
+      <button class="button">2</button>
+      <button class="button active">3</button>
+      <button class="button">4</button>
+      <input type="text" />
+    </div>
+  </body>
+</html>

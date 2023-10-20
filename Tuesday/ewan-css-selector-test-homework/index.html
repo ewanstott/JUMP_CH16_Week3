@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      /* Using the cog icon to the left, select 'reset', then 'normalise' to see how these affect the page */
+
+      /* QUESTIONS */
+      /* 1 */
+      * {
+        color: darkblue;
+      }
+
+      /* 2. */
+      ul {
+        list-style: none;
+      }
+
+      li {
+        background-color: yellow;
+      }
+
+      /* 3 */
+      /* You'll need to add the classes to the HTML yourself */
+      /* Add a single class to all the images */
+      .image {
+        display: none; /* All should disappear */
+      }
+
+      /* add a class for cat images and target it here */
+      .cat {
+        display: initial; /* Cat images should become visible */
+      }
+
+      /* add a class for fat cat images and target it here */
+      .fat {
+        border: 10px solid red; /* Fat cat images should have big red border */
+      }
+
+      /* 4 */
+      /* Use # for ID Selector  */
+      #the-one {
+        background-color: blue;
+        color: white;
+      }
+
+      /* All links that begin with 'https://' */
+      /* Attribute Selector */
+      a[href^="http://"]::after
+      {
+        content: "(external link)";
+      }
+
+      a[href$=".es"] {
+        background-color: orange;
+      }
+
+      /* Any link that has 'amazon' in the href */
+      a[href*="amazon"] {
+        background-color: goldenrod;
+      }
+
+      /* 5 */
+      /* pseudo-class */
+      button:hover {
+        background-color: aquamarine;
+      }
+
+      input:focus {
+        background-color: aquamarine;
+      }
+
+      /* use .childlist li<something> as the selector here */
+      .childlist li:nth-child(5) {
+        background-color: aquamarine;
+      }
+
+      /* and here */
+      .childlist li:nth-child(3n + 7) {
+        background-color: red;
+      }
+
+      /* 6 */
+
+      ul.not li:not(.excluded) {
+        background-color: red;
+      }
+
+      /* 7 */
+      body {
+        counter-reset: question;
+      }
+
+      /* you'll need to add class to the question li s and then use it to target the pseudo element */
+      .question::after {
+        content: "?";
+      }
+
+      question::before {
+        counter-increment: question;
+        content: "Question " counter(question) ": ";
+      }
+
+      /* this is a pseudo-element */
+      .first-letter::first-letter {
+        font-size: 3rem;
+      }
+
+      /* COMBINATORS */
+      div p {
+        color: red;
+      }
+
+      ul.immediate-child > li {
+        border: 1px solid red;
+      }
+
+      /* remember, for <any element> use the selector from Q1 */
+      .special + * {
+        background-color: orange;
+      }
+
+      /* same here */
+      .special ~ * {
+        font-size: 2rem;
+      }
+
+      /* Stacked Selectors */
+      h1,
+      h2 {
+        color: rebeccaPurple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Selectors Test</h1>
+    <p><strong>Instructions are in the CSS as comments.</strong></p>
+    <p>
+      Some of the CSS code I have put in has spaces for you to fill in the
+      selector chain. If you see something like
+      <code>&lt;select the ul&gt;</code> you need to replace that with your
+      answer.
+      <strong
+        ><abbr title="Nota Bene or Note well">N.B.</abbr> this is not valid CSS,
+        so the CSS below one of these answer fields will not work!!!</strong
+      >
+      It is therefore best to do them in order!
+    </p>
+
+    <h2>Q1. Universal Selection</h2>
+    <p>See CSS for more.</p>
+
+    <h2>Q2. Elements</h2>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+
+    <h2>Q3. Classes</h2>
+    <ul>
+      <li>
+        <img
+          width="500"
+          src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+          alt="cat"
+          class="image cat"
+        />
+      </li>
+      <li>
+        <img
+          width="500"
+          src="https://ichef.bbci.co.uk/news/660/cpsprodpb/BB42/production/_105283974_0_fat-cat-935049.jpg"
+          alt="cat fat"
+          class="image cat fat"
+        />
+      </li>
+      <li>
+        <img
+          width="500"
+          src="https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg"
+          alt="dog"
+          class="image"
+        />
+      </li>
+    </ul>
+
+    <h2>Q.4. IDs</h2>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li id="the-one">3</li>
+    </ul>
+
+    <h2>Q.4. Attributes</h2>
+    <nav>
+      <a href="https://smile.amazon.com">Amazon</a>
+      <a href="https://www.google.com">Google</a>
+      <a href="https://www.thelocal.es">Spanish News</a>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.twitter.com">Twitter</a>
+    </nav>
+
+    <h2>Q.5. Pseudo-Classes</h2>
+    <button>Hover Me</button>
+    <input type="text" placeholder="focus me" />
+
+    <ul class="childlist">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+    </ul>
+
+    <h2>Q.6. Pseudo-Classes (not selector)</h2>
+    <ul class="not">
+      <li>1</li>
+      <li class="excluded">2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+
+    <h2>Q.7. Pseudo-Elements</h2>
+    <ul class="questions">
+      <li class="question">What is the capital of France</li>
+      <li class="question">What is the name of the largest ocean</li>
+      <li class="question">How high is the Empire State Building</li>
+    </ul>
+
+    <p class="first-letter">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
+      aliquid, modi ex ullam dolor laboriosam veritatis perspiciatis itaque
+      doloribus atque nisi labore expedita maiores iure assumenda consequatur
+      cumque ut. Non!
+    </p>
+
+    <h2>Q.8. Combinators</h2>
+
+    <!-- Descendant -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id accusantium
+      repellat sed atque expedita, alias explicabo dignissimos veniam numquam
+      optio asperiores assumenda laboriosam magni earum quo minus minima aliquid
+      incidunt?
+    </p>
+    <div>
+      <p>
+        Distinctio adipisci tenetur at magni consectetur fugit eos, omnis
+        nesciunt, commodi blanditiis obcaecati est, quasi mollitia soluta! Autem
+        consequatur doloremque est asperiores, error perferendis! Similique
+        quaerat blanditiis amet sequi neque.
+      </p>
+    </div>
+    <div>
+      <p>
+        Inventore perferendis laudantium error dignissimos itaque omnis delectus
+        sed suscipit odio animi exercitationem ratione quaerat obcaecati
+        temporibus reprehenderit quas praesentium maiores rerum ad, iure saepe
+        possimus ullam! Officia, laborum placeat!
+      </p>
+    </div>
+    <p>
+      Est veritatis reiciendis quae iusto enim explicabo nulla praesentium,
+      repellat atque maiores et rem ipsa ad provident inventore aspernatur at
+      molestias vitae laudantium tempore voluptate aut qui? Odit, optio fugit?
+    </p>
+
+    <ul class="immediate-child">
+      <li>
+        Me
+        <ul>
+          <li>Not me</li>
+          <li>Not me</li>
+        </ul>
+      </li>
+      <li>
+        Me
+        <ul>
+          <li>Not me</li>
+          <li>Not me</li>
+        </ul>
+      </li>
+      <li>
+        Me
+        <ul>
+          <li>Not me</li>
+          <li>Not me</li>
+        </ul>
+      </li>
+      <li>
+        Me
+        <ul>
+          <li>Not me</li>
+          <li>Not me</li>
+        </ul>
+      </li>
+      <li>
+        Me
+        <ul>
+          <li>Not me</li>
+          <li>Not me</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="sibling-selectors">
+      <p>1</p>
+      <div>
+        <p>2</p>
+      </div>
+      <p>3</p>
+      <p class="special">4</p>
+      <p>5</p>
+      <pre>6</pre>
+      <p>7</p>
+    </div>
+  </body>
+</html>
